@@ -1,6 +1,6 @@
 
 
-from backend.app.services.subnet_service import calculate_subnet
+from app.services.subnet_service import calculate_subnet
 
 
 # Test 1: Valid IPv4 subnet
