@@ -1,5 +1,5 @@
 
-from backend.app.services.validator_service import validate_ip
+from app.services.validator_service import validate_ip
 
 
 # Test 1: Valid IPv4 address
