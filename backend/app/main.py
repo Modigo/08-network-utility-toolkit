@@ -15,10 +15,10 @@ app = FastAPI(
 # Allow the deployed frontend to communicate with the backend
 origins = [
     "https://team11-network-toolkit.netlify.app",
+    "https://team11-network-toolkit-frontend.onrender.com",
     "http://localhost:5500",
     "http://127.0.0.1:5500"
 ]
-
 
 app.add_middleware(
     CORSMiddleware,
