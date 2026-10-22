@@ -1,72 +1,337 @@
-# Network Utility Toolkit
+🌐 Team 11 — Network Utility Toolkit
 
-## Project Summary
-**Category:** Backend & APIs  
-**Difficulty:** Intermediate  
-**Suggested team split:** Calculation library, DNS module, API, frontend 
+A web-based networking utility developed by Team 11 to simplify IP address validation, subnet calculations, DNS lookups, and reverse DNS lookups.
 
-## Description
-This project is a good fit for a small team that wants to build something real and usable in a short amount of time. It focuses on one clear feature, clean data flow, and a simple user experience that can be demoed without extra fluff. The goal is to turn a good idea into a working MVP with a solid backend, a basic interface, and a realistic set of edge cases.
+The application provides a user-friendly interface connected to a Python FastAPI backend.
 
-## Scope
-Build a CIDR/subnet calculator, IP validator, and DNS lookup tool.
+🚀 Live Application
 
-## Core Features
-- Deliver the main user flow from start to finish.
-- Support the required data model and user interactions.
-- Handle validation, edge cases, and error states cleanly.
-- Include basic monitoring, feedback, or reporting where relevant.
-- Make the app easy to explain during a live demo.
+Frontend:
+https://team11-network-toolkit-frontend.onrender.com
 
-## Deliverables
-- A working deployed application or API demo
-- A clear README with setup instructions and environment variables
-- A minimal database schema or data model definition
-- UI screens or API endpoints for the core MVP
-- A basic test strategy covering the happy path and one major failure path
-- A short demo script explaining the architecture, choices, and trade-offs
+Backend API:
+https://team11-network-toolkit-api.onrender.com
 
-## Suggested Architecture
-- Frontend: simple dashboard, form-based interface, or lightweight visual layer
-- Backend: API or service layer for business logic and validation
-- Data layer: database, in-memory persistence, or structured file storage for MVP use
-- Optional extras: auth, async jobs, scheduling, WebSockets, caching, or notifications depending on the project
+Interactive API Documentation:
+https://team11-network-toolkit-api.onrender.com/docs
 
-## Learning Outcomes
-Networking, binary arithmetic, APIs
+GitHub Repository:
+https://github.com/promzycgold-code/08-network-utility-toolkit
 
-## Recommended MVP Checklist
-1. Define the main user flow and success criteria.
-2. Build the data model and core backend logic.
-3. Connect the UI or client to the main application flow.
-4. Add key validation, security checks, and realistic error states.
-5. Test the happy path and at least one important edge case.
-6. Deploy the app and document the setup clearly.
+📌 Project Overview
 
-## Free Deployment Options
-Render, Railway, Fly.io, Cloud Run, or Supabase for database features.
+The Network Utility Toolkit helps users perform common networking operations without manually calculating network information or using complex command-line tools.
 
-## Good Free Hosting Choices
-- Static frontend: Vercel, Netlify, or GitHub Pages
-- API/backend: Render, Railway, or Fly.io
-- Database/realtime services: Supabase, Neon, Firebase, or Cloudflare D1
-- Documentation/demo pages: GitHub Pages, Cloudflare Pages, or Vercel
+It combines a simple frontend interface with a REST API to provide accurate networking information.
 
-## Typical Tech Stack
-- Frontend: React, Next.js, plain HTML/JS, or similar lightweight UI tooling
-- Backend: Node.js, Python (Flask/FastAPI), or Java/Spring Boot
-- Database: Postgres, SQLite, Supabase, or a simple file-based store
-- Real-time layer: WebSockets, polling, or background workers if needed
+✨ Features
 
-## Final Demo Expectations
-- Provide a working URL with sample or seeded data
-- Show one clear end-to-end flow from start to finish
-- Explain the most important technical decisions and trade-offs
-- Include screenshots, screen recordings, or a brief live walk-through
-- Highlight what was completed in the MVP and what would be next if the project continued
+1. IP Address Validation
 
-## Next Improvements
-- Add authorization, auditing, or stronger validation
-- Improve test coverage and resilience
-- Add analytics, metrics, or observability
-- Expand functionality once the core MVP is stable
+- Validates IP addresses.
+- Identifies valid and invalid IP address formats.
+- Provides useful information about valid addresses.
+
+2. Subnet Calculator
+
+- Calculates subnet information using IP addresses and CIDR prefixes.
+- Determines network addresses and subnet masks.
+- Provides information about available host addresses.
+
+3. DNS Lookup
+
+- Retrieves DNS records for domain names.
+- Supports A, AAAA, MX, TXT, and NS records.
+- Displays DNS lookup results.
+
+4. Reverse DNS Lookup
+
+- Uses PTR records to perform reverse DNS lookups.
+- Attempts to identify hostnames associated with IP addresses.
+- Available through the backend DNS API using the PTR record type.
+
+🛠️ Technologies Used
+
+Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+Backend
+
+- Python
+- FastAPI
+- Uvicorn
+- dnspython
+- Pydantic
+
+Testing
+
+- pytest
+- httpx
+- Node.js test runner
+
+Deployment
+
+- Render — backend API
+- Render — frontend static website
+- GitHub — version control and collaboration
+
+📁 Project Structure
+
+08-network-utility-toolkit/
+│
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   │   └── routes/
+│   │   │       ├── validator.py
+│   │   │       ├── subnet.py
+│   │   │       └── dns.py
+│   │   │
+│   │   ├── services/
+│   │   │   ├── validator_service.py
+│   │   │   ├── subnet_service.py
+│   │   │   ├── dns_service.py
+│   │   │   └── reverse_dns_service.py
+│   │   │
+│   │   └── main.py
+│   │
+│   ├── tests/
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   ├── api.js
+│   ├── config.js
+│   ├── validators.js
+│   ├── mock.js
+│   └── package.json
+│
+└── README.md
+
+⚙️ Installation and Setup
+
+Step 1: Clone the Repository
+
+git clone https://github.com/promzycgold-code/08-network-utility-toolkit.git
+
+Navigate into the project:
+
+cd 08-network-utility-toolkit
+
+Step 2: Set Up the Backend
+
+Navigate into the backend directory:
+
+cd backend
+
+Create a virtual environment:
+
+python -m venv venv
+
+Activate the virtual environment.
+
+On Windows:
+
+venv\Scripts\activate
+
+On Linux or macOS:
+
+source venv/bin/activate
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+Start the backend server:
+
+uvicorn app.main:app --reload
+
+The backend will run at:
+
+http://localhost:8000
+
+API documentation will be available at:
+
+http://localhost:8000/docs
+
+Step 3: Set Up the Frontend
+
+Open another terminal and navigate into the frontend directory:
+
+cd frontend
+
+Start a local server:
+
+python3 -m http.server 5500
+
+Open the application in your browser:
+
+http://localhost:5500
+
+For local development, update "frontend/config.js" to:
+
+export const API_BASE = "http://localhost:8000";
+export const USE_MOCK = false;
+
+For the deployed application, use the production backend URL instead.
+
+🔌 API Endpoints
+
+Method| Endpoint| Description
+GET| "/"| API welcome message
+GET| "/health"| Backend health check
+POST| "/api/v1/validate"| Validate an IP address
+POST| "/api/v1/subnet"| Calculate subnet information
+GET| "/api/v1/dns"| Perform DNS lookup
+GET| "/api/v1/dns?domain=8.8.8.8&type=PTR"| Perform reverse DNS lookup
+
+Example: IP Validation
+
+Endpoint
+
+POST /api/v1/validate
+
+Request
+
+{
+  "ip": "192.168.1.1"
+}
+
+Example: Subnet Calculation
+
+Endpoint
+
+POST /api/v1/subnet
+
+Request
+
+{
+  "ip": "192.168.1.10",
+  "cidr": 24
+}
+
+Example: DNS Lookup
+
+GET /api/v1/dns?domain=google.com&type=A
+
+Example: Reverse DNS Lookup
+
+GET /api/v1/dns?domain=8.8.8.8&type=PTR
+
+🧪 Testing
+
+Backend tests are located in:
+
+backend/tests/
+
+To run the backend tests:
+
+cd backend
+python -m pytest
+
+To run the frontend tests:
+
+cd frontend
+npm test
+
+The tests help verify networking calculations, validation logic, and DNS functionality.
+
+☁️ Deployment
+
+The project uses Render for deployment.
+
+Backend Deployment
+
+The FastAPI backend is deployed as a Render Web Service.
+
+The application runs using Uvicorn and exposes REST API endpoints.
+
+Frontend Deployment
+
+The frontend is deployed as a Render Static Site.
+
+It communicates with the deployed backend through the API URL configured in "frontend/config.js".
+
+Production configuration:
+
+export const API_BASE = "https://team11-network-toolkit-api.onrender.com";
+export const USE_MOCK = false;
+
+CORS is configured in the backend to allow requests from the deployed frontend.
+
+👥 Team Contributions
+
+This project was developed collaboratively by four team members.
+
+Role 1 — Calculation Library Developer
+
+- IP address validation.
+- Subnet calculation.
+- Core networking calculations and tests.
+
+Role 2 — DNS Module Developer and Project Leader
+
+- DNS lookup implementation.
+- Reverse DNS lookup implementation.
+- Project coordination and integration support.
+
+Role 3 — API and Integration Engineer
+
+- FastAPI application development.
+- API endpoint integration.
+- Backend deployment.
+- API testing and error handling.
+
+Role 4 — Frontend Developer
+
+- User interface development.
+- HTML, CSS, and JavaScript implementation.
+- Frontend and backend integration.
+- Frontend deployment.
+
+🔒 Error Handling and Validation
+
+The application includes validation and error handling for common problems such as:
+
+- Invalid IP addresses.
+- Incorrect subnet prefixes.
+- Invalid domain names.
+- DNS lookup failures.
+- Backend connection errors.
+
+📈 Future Improvements
+
+Potential future enhancements include:
+
+- A dedicated reverse DNS lookup interface.
+- Additional DNS record types.
+- Improved mobile responsiveness.
+- Expanded automated test coverage.
+- Network diagnostic tools such as ping and traceroute.
+- Additional deployment monitoring.
+
+🎯 Learning Outcomes
+
+This project provided practical experience in:
+
+- Python programming.
+- Networking fundamentals.
+- IP addressing and subnetting.
+- DNS resolution.
+- REST API development.
+- Frontend and backend integration.
+- Git and GitHub collaboration.
+- Cloud deployment.
+
+📄 Conclusion
+
+The Team 11 Network Utility Toolkit demonstrates how networking concepts can be implemented in a practical web application.
+
+By combining Python, FastAPI, JavaScript, and cloud deployment, the team developed an accessible networking toolkit that supports common network administration tasks.
+
+Developed by Team 11.
